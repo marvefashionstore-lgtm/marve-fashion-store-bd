@@ -642,91 +642,7 @@ footer a:hover{
 }
 
 /* CART DRAWER */
-    
-<!-- CHECKOUT MODAL -->
-
-<div class="checkout-modal" id="checkoutModal">
-
-    <div class="checkout-box">
-
-        <button class="checkout-close"
-                onclick="closeCheckout()">
-            ×
-        </button>
-
-        <h2>CHECKOUT</h2>
-
-        <p class="checkout-sub">
-            Complete your information to place your order.
-        </p>
-
-        <div class="checkout-form">
-
-            <label>Full Name *</label>
-
-            <input
-                type="text"
-                id="customerName"
-                placeholder="Enter your full name">
-
-
-            <label>Phone Number *</label>
-
-            <input
-                type="tel"
-                id="customerPhone"
-                placeholder="01XXXXXXXXX">
-
-
-            <label>Delivery Address *</label>
-
-            <textarea
-                id="customerAddress"
-                placeholder="House, Road, Area, District"></textarea>
-
-
-            <label>Payment Method</label>
-
-            <select id="paymentMethod">
-
-                <option value="Cash on Delivery">
-                    Cash on Delivery
-                </option>
-
-            </select>
-
-
-            <div class="order-summary">
-
-                <h4>YOUR ORDER</h4>
-
-                <div id="checkoutItems"></div>
-
-                <div class="order-total">
-
-                    <span>Total</span>
-
-                    <span id="checkoutTotal">
-                        ৳0
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <button class="place-order"
-                    onclick="placeOrder()">
-
-                📱 PLACE ORDER ON WHATSAPP
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
+ 
 .cart-drawer{
     position:fixed;
     right:-400px;
@@ -1818,7 +1734,7 @@ footer a:hover{
             <ul>
                 <li>📞 +8801314-576664</li>
                 <li>✉️ marvefashionstore@gmail.com</li>
-                <li>📍 Dhaka, Bangladesh</li>
+                <li>📍 Dhaka,Bangladesh</li>
             </ul>
 
             <a class="whatsapp"
@@ -1863,40 +1779,90 @@ footer a:hover{
 
 <!-- CART DRAWER -->
 
-<div class="cart-drawer" id="cartDrawer">
+<!-- CHECKOUT MODAL -->
 
-    <div class="cart-header">
+<div class="checkout-modal" id="checkoutModal">
 
-        <h3>Your Cart</h3>
+    <div class="checkout-box">
 
-        <button onclick="closeCart()"
-                style="border:0;background:none;font-size:22px;">
+        <button class="checkout-close"
+                onclick="closeCheckout()">
             ×
         </button>
 
+        <h2>CHECKOUT</h2>
+
+        <p class="checkout-sub">
+            Complete your information to place your order.
+        </p>
+
+        <div class="checkout-form">
+
+            <label>Full Name *</label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter your full name">
+
+
+            <label>Phone Number *</label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                placeholder="01XXXXXXXXX">
+
+
+            <label>Delivery Address *</label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="House, Road, Area, District"></textarea>
+
+
+            <label>Payment Method</label>
+
+            <select id="paymentMethod">
+
+                <option value="Cash on Delivery">
+                    Cash on Delivery
+                </option>
+
+            </select>
+
+
+            <div class="order-summary">
+
+                <h4>YOUR ORDER</h4>
+
+                <div id="checkoutItems"></div>
+
+                <div class="order-total">
+
+                    <span>Total</span>
+
+                    <span id="checkoutTotal">
+                        ৳0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button class="place-order"
+                    onclick="placeOrder()">
+
+                📱 PLACE ORDER ON WHATSAPP
+
+            </button>
+
+        </div>
+
     </div>
-
-    <div class="cart-items" id="cartItems">
-        Your cart is empty.
-    </div>
-
-    <div class="cart-total">
-
-        <span>Total</span>
-
-        <span id="cartTotal">
-            ৳0
-        </span>
-
-    </div>
-
-    <button class="checkout-btn"
-            onclick="checkout()">
-        PROCEED TO CHECKOUT
-    </button>
 
 </div>
-
 
 <script>
 
