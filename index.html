@@ -1,230 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>MARVE | Fashion Store</title>
-  <meta name="description" content="MARVE — Modern fashion, jewellery, watches, bags and accessories.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MARVE — Fashion Store</title>
+<meta name="description" content="MARVE Fashion Store — jewellery, watches, bags, sunglasses and accessories.">
+<style>
+:root{--ink:#101315;--cream:#f8f4ed;--gold:#c49a52;--red:#c51f2c;--line:#e8e1d6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:#fff}
+a{text-decoration:none;color:inherit}.top{background:#101417;color:#fff;font-size:12px;padding:8px 4%;display:flex;justify-content:space-between;gap:20px}.top span{opacity:.95}
+.nav{height:86px;padding:0 4%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #eee;background:#fff;position:sticky;top:0;z-index:20}
+.logo{font-family:Georgia,serif;font-size:42px;letter-spacing:4px;line-height:.8}.logo small{display:block;font:10px Arial;letter-spacing:5px;text-align:center;margin-top:9px}
+.links{display:flex;gap:30px;font-size:14px}.actions{display:flex;align-items:center;gap:17px}.search{width:220px;border:1px solid #ddd;border-radius:30px;padding:10px 15px;color:#777;font-size:12px}
+.icon{font-size:23px;position:relative}.count{position:absolute;right:-8px;top:-6px;background:#111;color:#fff;font-size:9px;width:15px;height:15px;border-radius:50%;display:grid;place-items:center}
+.hero{height:430px;background:#ead8cb;position:relative;overflow:hidden}.hero img{width:100%;height:100%;object-fit:cover}.hero .copy{position:absolute;right:8%;top:50%;transform:translateY(-50%);text-align:center}.copy .brand{font:68px Georgia,serif;letter-spacing:3px}.script{font:italic 35px Georgia,serif;margin-top:-8px}.copy .cats{margin:25px 0;font-size:16px}.btn{display:inline-block;background:#111;color:#fff;padding:14px 27px;border-radius:28px;font-weight:700;font-size:13px}
+.section{max-width:1180px;margin:auto;padding:34px 20px}.heading{text-align:center;margin-bottom:24px}.heading h2{font:700 26px Georgia,serif;margin:8px}.heading p{font-size:11px;color:#777;margin:0}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}.cat{background:#f5eee5;border-radius:6px;overflow:hidden;text-align:center}.cat img{width:100%;height:145px;object-fit:cover;display:block}.cat b{display:block;padding:13px 4px 5px;font:600 15px Georgia,serif}.cat a{display:block;font-size:11px;padding-bottom:13px}
+.rowtitle{display:flex;justify-content:space-between;align-items:end;margin:28px 0 16px}.rowtitle h2{font:700 24px Georgia,serif;margin:0}.rowtitle small{color:#777}.products{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}.product{border:1px solid #e7e0d6;border-radius:7px;overflow:hidden;background:#fff;box-shadow:0 2px 8px #00000008;position:relative}.product img{width:100%;height:160px;object-fit:cover;display:block}.badge{position:absolute;right:7px;top:7px;background:#bd1d27;color:#fff;border-radius:14px;padding:5px 7px;font-size:10px}.product .info{padding:10px}.product h3{font-size:12px;margin:0 0 8px;min-height:29px}.stars{color:#d59a14;font-size:12px}.price{font-weight:800;margin-top:7px}.old{color:#999;text-decoration:line-through;font-size:10px;margin-left:5px;font-weight:400}.cart{display:block;width:100%;border:0;background:#111;color:#fff;padding:10px;border-radius:4px;margin-top:10px;font-size:11px;cursor:pointer}
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.offer{height:150px;border-radius:7px;overflow:hidden;position:relative;color:#fff}.offer img{width:100%;height:100%;object-fit:cover;filter:brightness(.72)}.offer .text{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.offer h3{font:24px Georgia,serif;margin:5px}.offer p{margin:0 0 12px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e9dfd3;margin-top:20px;border-radius:6px;overflow:hidden}.feature{background:#faf6ef;padding:22px;text-align:center}.feature b{display:block;margin-bottom:6px}.feature span{font-size:11px;color:#777}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.review{border:1px solid #e5ded4;border-radius:7px;padding:20px;background:#fff}.person{display:flex;gap:10px;align-items:center}.avatar{width:42px;height:42px;border-radius:50%;object-fit:cover}.review p{font-size:11px;color:#666;line-height:1.6}
+footer{background:#101417;color:#fff;margin-top:0;padding:40px 4% 18px}.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr 1.3fr;gap:30px;max-width:1180px;margin:auto}.foot h3{margin-top:0}.foot a,.foot p{display:block;color:#ddd;font-size:12px;margin:8px 0}.copyright{border-top:1px solid #303438;margin-top:25px;padding-top:15px;font-size:11px;color:#aaa;text-align:center}
+@media(max-width:800px){.top{font-size:9px}.top span:nth-child(2){display:none}.nav{height:70px;padding:0 14px}.logo{font-size:28px}.logo small{font-size:7px;letter-spacing:3px;margin-top:6px}.links{display:none}.search{display:none}.actions{gap:10px}.hero{height:390px}.hero img{object-position:45% center}.hero .copy{right:5%;top:52%;width:48%}.copy .brand{font-size:37px}.script{font-size:21px}.copy .cats{font-size:11px;line-height:2;margin:14px 0}.btn{padding:11px 17px;font-size:11px}.section{padding:28px 12px}.cards{grid-template-columns:repeat(2,1fr);gap:10px}.cat img{height:115px}.cat b{font-size:13px}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product img{height:165px}.offers{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}.reviews{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr;gap:20px}.foot>div:first-child{grid-column:1/-1}.heading h2{font-size:23px}.rowtitle h2{font-size:21px}}
+@media(max-width:420px){.hero{height:410px}.hero .copy{width:46%}.copy .brand{font-size:29px}.script{font-size:17px}.copy .cats{font-size:9px}.cat img{height:105px}.product img{height:150px}.features{grid-template-columns:1fr 1fr}.foot{grid-template-columns:1fr 1fr}.foot a,.foot p{font-size:10px}}
+</style>
 </head>
-
 <body>
-
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-
-      <a href="#" class="logo">MARVE</a>
-
-      <nav class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#collections">Collections</a>
-        <a href="#about">About</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button onclick="openWishlist()" aria-label="Wishlist">
-          ♡
-          <span id="wishCount">0</span>
-        </button>
-
-        <button onclick="openCart()" aria-label="Shopping cart">
-          🛍
-          <span id="cartCount">0</span>
-        </button>
-      </div>
-
-    </div>
-  </header>
-
-
-  <!-- HERO -->
-  <main>
-
-    <section class="hero" id="home">
-      <div class="container hero-content">
-
-        <div class="hero-text">
-          <p class="eyebrow">NEW COLLECTION 2026</p>
-
-          <h1>
-            Style that<br>
-            <span>speaks for you.</span>
-          </h1>
-
-          <p class="hero-description">
-            Discover modern fashion, elegant jewellery, watches,
-            bags and accessories curated for your everyday style.
-          </p>
-
-          <div class="hero-buttons">
-            <a href="#shop" class="btn btn-dark">Shop Now</a>
-            <a href="#collections" class="btn btn-light">Explore Collection</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <div class="hero-image">
-            <img
-              src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1000&q=85"
-              alt="MARVE fashion collection">
-          </div>
-
-          <div class="floating-card">
-            <small>MARVE EDIT</small>
-            <strong>Elegance, redefined.</strong>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- COLLECTIONS -->
-    <section class="collections" id="collections">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">EXPLORE</p>
-            <h2>Shop by category</h2>
-          </div>
-
-          <a href="#shop">View all →</a>
-        </div>
-
-        <div class="category-grid">
-
-          <button class="category-card" onclick="filterCategory('Jewellery')">
-            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=800&q=85" alt="Jewellery">
-            <span>Jewellery</span>
-          </button>
-
-          <button class="category-card" onclick="filterCategory('Watches')">
-            <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=85" alt="Watches">
-            <span>Watches</span>
-          </button>
-
-          <button class="category-card" onclick="filterCategory('Bags')">
-            <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=85" alt="Bags">
-            <span>Bags</span>
-          </button>
-
-          <button class="category-card" onclick="filterCategory('Sunglasses')">
-            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=800&q=85" alt="Sunglasses">
-            <span>Sunglasses</span>
-          </button>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- PRODUCTS -->
-    <section class="products-section" id="shop">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">MARVE STORE</p>
-            <h2>Featured products</h2>
-          </div>
-        </div>
-
-        <div class="filter-row">
-          <button class="filter-btn active" onclick="filterCategory('All')">All</button>
-          <button class="filter-btn" onclick="filterCategory('Jewellery')">Jewellery</button>
-          <button class="filter-btn" onclick="filterCategory('Watches')">Watches</button>
-          <button class="filter-btn" onclick="filterCategory('Bags')">Bags</button>
-          <button class="filter-btn" onclick="filterCategory('Sunglasses')">Sunglasses</button>
-          <button class="filter-btn" onclick="filterCategory('Accessories')">Accessories</button>
-        </div>
-
-        <div id="productGrid" class="product-grid"></div>
-
-      </div>
-    </section>
-
-
-    <!-- BRAND STORY -->
-    <section class="about" id="about">
-      <div class="container about-grid">
-
-        <div class="about-image">
-          <img
-            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85"
-            alt="MARVE fashion">
-        </div>
-
-        <div class="about-text">
-          <p class="eyebrow">THE MARVE STORY</p>
-
-          <h2>Made for your<br>everyday statement.</h2>
-
-          <p>
-            MARVE brings together timeless elegance and modern
-            fashion in one carefully curated destination.
-          </p>
-
-          <p>
-            From statement jewellery to refined watches and
-            everyday accessories, every piece is selected
-            to help you express your own style.
-          </p>
-
-          <a href="#shop" class="btn btn-dark">Discover MARVE</a>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- NEWSLETTER -->
-    <section class="newsletter">
-      <div class="container newsletter-box">
-
-        <div>
-          <p class="eyebrow">STAY IN STYLE</p>
-          <h2>Get MARVE updates.</h2>
-          <p>New arrivals, special offers and style inspiration.</p>
-        </div>
-
-        <form onsubmit="subscribe(event)">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-grid">
-
-      <div>
-        <div class="footer-logo">MARVE</div>
-        <p>Modern fashion. Timeless expression.</p>
-      </div>
-
-      <div>
-        <h4>Shop</h4>
-        <a href="#shop">All Products</a>
-        <a href="#collections">Collections</a>
-        <a href="#shop">New Arrivals</a>
-      </div>
-
-      <div>
-        <h4>Help</h4>
+<div class="top"><span>🚚 Free Delivery on Orders Above ৳2000</span><span>⭐ Genuine Products &nbsp; | &nbsp; 🔒 Safe & Secure Shopping &nbsp; | &nbsp; 💵 Cash on Delivery</span><span>Follow Us &nbsp; f &nbsp; ◎ &nbsp; ◉</span></div>
+<header class="nav"><a class="logo" href="#">MARVE<small>FASHION STORE</small></a><nav class="links"><a href="#home">Home</a><a href="#shop">Shop⌄</a><a href="#categories">Categories⌄</a><a href="#about">About Us</a><a href="#contact">Contact</a></nav><div class="actions"><input class="search" placeholder="Search products..."><span class="icon">♙</span><span class="icon">♡<i class="count" id="wishCount">0</i></span><span class="icon">🛒<i class="count" id="cartCount">0</i></span></div></header>
+<section class="hero" id="home"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1600&q=85" alt="MARVE fashion"><div class="copy"><div class="brand">MARVE’</div><div class="script">Style That Defines You</div><div class="cats">Jewellery &nbsp;|&nbsp; Watches &nbsp;|&nbsp; Bags &nbsp;|&nbsp; Sunglasses &nbsp;|&nbsp; Accessories</div><a class="btn" href="#shop">SHOP NOW →</a></div></section>
+<section class="section" id="categories"><div class="heading"><h2>— &nbsp; SHOP BY CATEGORY &nbsp; —</h2><p>Find your favorite style</p></div><div class="cards">
+<a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"><b>Jewellery</b><span>Shop Now →</span></a>
+<a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85"><b>Watches</b><span>Shop Now →</span></a>
+<a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=700&q=85"><b>Bags</b><span>Shop Now →</span></a>
+<a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=85"><b>Sunglasses</b><span>Shop Now →</span></a>
+<a class="cat" href="#shop"><img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=85"><b>Accessories</b><span>Shop Now →</span></a>
+</div></section>
+<section class="section" id="shop"><div class="rowtitle"><div><h2>BEST SELLERS</h2><small>Our most loved products</small></div><a href="#">View All →</a></div><div class="products" id="products"></div>
+<div class="offers"><div class="offer"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1000&q=80"><div class="text"><small>Special Offer</small><h3>UP TO 25% OFF</h3><p>On Selected Jewellery</p><a class="btn" href="#">Shop Now →</a></div></div><div class="offer"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1000&q=80"><div class="text"><small>TIMELESS ELEGANCE</small><h3>Stylish Watches for Every Moment</h3><a class="btn" href="#">Shop Now →</a></div></div></div>
+<div class="features"><div class="feature">🛡️<b>100% Authentic Products</b><span>Shop with Confidence</span></div><div class="feature">💵<b>Cash on Delivery</b><span>Pay After You Receive</span></div><div class="feature">🚚<b>Fast & Secure Delivery</b><span>Across Bangladesh</span></div><div class="feature">↩️<b>Easy Return Policy</b><span>Hassle Free Returns</span></div></div></section>
+<section class="section" id="about"><div class="heading"><h2>WHAT OUR CUSTOMERS SAY</h2><p>Real stories, real style</p></div><div class="reviews">
+<div class="review"><div class="person"><img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg"><b>Tasmia Rahman<br><small>Dhaka</small></b></div><p>“I absolutely love the quality and design! The jewellery is even more beautiful in real life. Will definitely shop again!”</p></div>
+<div class="review"><div class="person"><img class="avatar" src="https://randomuser.me/api/portraits/women/65.jpg"><b>Nusrat Jahan<br><small>Chittagong</small></b></div><p>“Original product, fast delivery and great customer service. MARVE is now my favorite online store!”</p></div>
+<div class="review"><div class="person"><img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg"><b>Rafid Islam<br><small>Sylhet</small></b></div><p>“The watch I ordered is just perfect! Premium quality and reasonable price. Highly recommended!”</p></div>
+</div></section>
+<footer id="contact"><div class="foot"><div><div class="logo">MARVE<small>FASHION STORE</small></div><p>Style That Defines You.</p></div><div><h3>Quick Links</h3><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About Us</a><a href="#contact">Contact</a></div><div><h3>Categories</h3><a>Jewellery</a><a>Watches</a><a>Bags</a><a>Sunglasses</a><a>Accessories</a></div><div><h3>Contact Us</h3><p>+880 1712 345678</p><p>marve.fashion@gmail.com</p><p>Dhaka, Bangladesh</p><a class="btn" href="https://wa.me/8801712345678">💬 Chat on WhatsApp</a></div><div><h3>Follow Us</h3><p>f &nbsp; ◎ &nbsp; ◉ &nbsp; ▶</p><p>Subscribe to our newsletter</p><input class="search" placeholder="Your email address"></div></div><div class="copyright">© 2025 MARVE Fashion Store. All rights reserved. &nbsp; Privacy Policy &nbsp;|&nbsp; Terms & Conditions</div></footer>
+<script>
+const products=[
+["Elegant Pearl Bangles","1,200","1,600","20","https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=85"],
+["Women's Watch (Rose Gold)","2,550","3,000","15","https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85"],
+["Diamond Necklace Set","1,950","2,390","18","https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=85"],
+["Stylish Handbag","2,300","2,950","22","https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=700&q=85"],
+["Premium Sunglasses","1,250","1,490","16","https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=85"],
+["Hair Accessories Set","650","740","12","https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=700&q=85"]];
+const grid=document.getElementById("products"); let cart=0;
+grid.innerHTML=products.map((p,i)=>`<article class="product"><span class="badge">-${p[3]}%</span><img src="${p[4]}" alt="${p[0]}"><div class="info"><h3>${p[0]}</h3><div class="stars">★★★★★</div><div class="price">৳${p[1]} <span class="old">৳${p[2]}</span></div><button class="cart" onclick="addCart()">🛒 Add to Cart</button></div></article>`).join("");
+function addCart(){cart++;document.getElementById("cartCount").textContent=cart}
+</script>
+</body></html>
         <a href="#">Contact</a>
         <a href="#">Shipping</a>
         <a href="#">Returns</a>
